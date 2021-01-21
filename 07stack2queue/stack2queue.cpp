@@ -11,8 +11,6 @@ using namespace std;
 #define debug 0 && cout
 #endif
 
-//时间复杂度O(n)
-//空间复杂度O(1)
 class Solution
 {
 public:
