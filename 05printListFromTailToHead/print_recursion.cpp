@@ -25,16 +25,16 @@ class Solution
 {
 public:
 
- vector<int> res;
- vector<int> printListFromTailToHead(ListNode* head)
- {   
-     if (head != NULL)
-     {
-         printListFromTailToHead(head->next);
-         res.push_back(head->val);
+     vector<int> res;
+     vector<int> printListFromTailToHead(ListNode* head)
+     {   
+         if (head != NULL)
+         {
+             printListFromTailToHead(head->next);
+             res.push_back(head->val);
+         }
+         return res;
      }
-     return res;
- }
 };
 
 int __tmain()
