@@ -25,34 +25,34 @@ public:
 class Solution
 {
 public:
- vector<int> printListFromTailToHead(struct ListNode* head)
- {
-     ListNode* node = head;
-     stack<int> st;
-     int count = 0;
+    vector<int> printListFromTailToHead(struct ListNode* head)
+    {
+        ListNode* node = head;
+        stack<int> st;
+        int count = 0;
      
-     while(node != NULL)
-     {
-         dout << node->val << " in stack" << endl;
-         st.push(node->val);
+        while(node != NULL)
+        {
+            dout << node->val << " in stack" << endl;
+            st.push(node->val);
 
-         count++;
-         node = node->next;
-     }
+            count++;
+            node = node->next;
+        }
      
-     //为了效率我们静态vector开辟空间
-     vector<int> res(count);//res中元素个数为count个, 元素大小为默认
-     dout << "count = " << count << endl;
-     for(int i = 0; i < count && st.empty() != true; i++)
-     {
-         dout << st.top() << " in vector" << endl;
-         // 如果静态开辟vector不能使用push_back, 否则会在原来数据的基础上增加
-         //res.push_back(st.top( ));
-         res[i] = st.top();
-         st.pop(); 
-     }
-     return res;
- }
+        //为了效率我们静态vector开辟空间
+        vector<int> res(count);//res中元素个数为count个, 元素大小为默认
+        dout << "count = " << count << endl;
+        for(int i = 0; i < count && st.empty() != true; i++)
+        {
+            dout << st.top() << " in vector" << endl;
+            // 如果静态开辟vector不能使用push_back, 否则会在原来数据的基础上增加
+            //res.push_back(st.top( ));
+            res[i] = st.top();
+            st.pop(); 
+        }
+        return res;
+    }
 };
 
 int __tmain()
