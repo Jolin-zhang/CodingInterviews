@@ -3,7 +3,8 @@
 
 using namespace std;
 
-class Solution {
+class Solution 
+{
 public:
     void reOrderArray(vector<int> &array) 
     {
