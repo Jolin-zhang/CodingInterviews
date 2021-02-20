@@ -18,20 +18,12 @@ public:
             return NULL;
         }
         ListNode *reversedHead = NULL;
-        ListNode *current = pHead;
-        ListNode *temp = NULL;
-        ListNode *pre = NULL;
-        
-        while(current != NULL)
+        while(pHead)
         {
-            temp = current->next;
-            current->next = pre;
-            if(temp == NULL)
-            {
-                reversedHead = current;
-            }
-            pre = current;
-            current = temp;
+            ListNode *temp = pHead;
+            pHead = pHead->next;
+            temp->next = reversedHead;
+            reversedHead = temp;
         }
         return reversedHead;
     }
